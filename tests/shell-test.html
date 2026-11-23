@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>shell self-test</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+  body { padding: 24px; background: #f7f5f0; }
+  #report { font-family: Consolas, monospace; font-size: 13px; white-space: pre-wrap; margin-top: 18px; }
+  .ok { color: #1a7f37; } .bad { color: #c1121f; }
+</style>
+</head>
+<body>
+<div class="shell" id="shell-root">
+  <div class="shell__bar">
+    <div class="shell__dots"><i></i><i></i><i></i></div>
+    <span class="shell__title">test</span>
+  </div>
+  <div class="shell__screen">
+    <div class="shell__out"></div>
+    <div class="shell__line">
+      <span class="shell__prompt"></span>
+      <input type="text" autocomplete="off">
+    </div>
+  </div>
+</div>
+<pre id="report"></pre>
+
+<script src="../assets/js/terminal.js"></script>
+<script>
+var TREE = {
+  '~': { type: 'dir', children: {
+    'README.md': { type: 'file', content: 'hello\nworld' },
+    'sub': { type: 'dir', children: { 'a.txt': { type: 'file', content: 'aaa' } } }
+  } }
+};
+
+var sh = Shell.mount({
+  root: document.getElementById('shell-root'),
+  tree: TREE,
+  whoami: 'tester',
+  prompt: function (c) { return 'guest@test <b>' + c + '</b> $'; },
+  promptText: function (c) { return 'guest@test ' + c + ' $'; },
+  banner: ['banner line'],
+  worlds: { 'inner-world': { href: '#nowhere', boot: ['boot 1'] } },
+  commands: { sudo: function () { return { text: 'no sudo', cls: 'warn' }; } }
+});
+
+var rep = document.getElementById('report');
+var out = document.querySelector('.shell__out');
+function tail(n) {
+  var lines = [].slice.call(out.querySelectorAll('.line'));
+  return lines.slice(-n).map(function (l) { return l.textContent; }).join('\n');
+}
+function check(name, cond, extra) {
+  var d = document.createElement('div');
+  d.className = cond ? 'ok' : 'bad';
+  d.textContent = (cond ? 'PASS  ' : 'FAIL  ') + name + (cond ? '' : '  >> ' + (extra || ''));
+  rep.appendChild(d);
+  return cond;
+}
+
+(async function () {
+  await sh.exec('help');
+  check('help 输出含 ls/cd', /ls/.test(tail(12)) && /cd/.test(tail(12)));
+
+  await sh.exec('pwd');
+  check('pwd = ~', /^~$/.test(tail(1).trim()), tail(1));
+
+  await sh.exec('ls');
+  check('ls 列出 README.md 与 sub/', /README\.md/.test(tail(3)) && /sub\//.test(tail(3)), tail(3));
+
+  await sh.exec('cat README.md');
+  check('cat 内容', /hello/.test(tail(2)) && /world/.test(tail(2)), tail(2));
+
+  await sh.exec('cd sub');
+  check('cd sub 后 prompt 更新', document.querySelector('.shell__prompt').textContent.indexOf('~/sub') > -1,
+    document.querySelector('.shell__prompt').textContent);
+  await sh.exec('ls');
+  check('子目录 ls', /a\.txt/.test(tail(2)), tail(2));
+  await sh.exec('cd ..');
+  check('cd .. 回根', document.querySelector('.shell__prompt').textContent.indexOf('~/sub') === -1);
+
+  await sh.exec('cd nothere');
+  check('cd 不存在目录报错', /没有那个目录/.test(tail(2)), tail(2));
+
+  await sh.exec('cat nosuch');
+  check('cat 不存在文件报错', /没有那个文件/.test(tail(2)), tail(2));
+
+  await sh.exec('sudo rm');
+  check('自定义命令生效', /no sudo/.test(tail(2)), tail(2));
+
+  await sh.exec('xyz');
+  check('未知命令提示', /command not found/.test(tail(2)), tail(2));
+
+  await sh.exec('echo hi there');
+  check('echo', /hi there/.test(tail(1)), tail(1));
+
+  await sh.exec('clear');
+  check('clear 清屏', out.querySelectorAll('.line').length === 0, out.querySelectorAll('.line').length);
+
+  await sh.exec('history');
+  check('history 非空', /help/.test(tail(5)) || document.querySelector('.shell__out').textContent.indexOf('help') > -1);
+
+  // 补全：输入 "cat RE" 后按 Tab
+  var input = document.querySelector('.shell input');
+  input.value = 'cat RE';
+  input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true }));
+  check('Tab 补全文件名', input.value === 'cat README.md', JSON.stringify(input.value));
+
+  var failed = rep.querySelectorAll('.bad').length;
+  var head = document.createElement('div');
+  head.style.marginBottom = '8px';
+  head.style.fontWeight = 'bold';
+  head.textContent = failed === 0 ? 'ALL PASS' : failed + ' FAILED';
+  rep.insertBefore(head, rep.firstChild);
+})();
+</script>
+</body>
+</html>

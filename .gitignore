@@ -1,0 +1,10 @@
+# 本地预览与临时产物
+.preview/
+node_modules/
+.DS_Store
+Thumbs.db
+
+# 个人笔记，不上传到公开仓库（含生日、草稿等私人信息）
+个人主页计划.md
+个人主页内容.md
+可行性评估.md

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>inner-world · 邓默</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#070a0b">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
+<link rel="stylesheet" href="../assets/css/inner.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="top">
+    <a class="top__back" href="../">← 返回主页</a>
+    <span>/inner-world</span>
+    <span class="top__status">已挂载 · 未编目</span>
+  </div>
+
+  <header class="hero">
+    <h1><span class="glitch" data-text="里世界">里世界</span></h1>
+    <p>
+      <span class="promptline">$</span> 简历之外的部分：体育、电竞、音乐、游戏，和一些不太好写进 PDF 的东西。
+    </p>
+  </header>
+
+  <!-- ================= 爱好 ================= -->
+  <section class="block">
+    <h2>01 · 爱好</h2>
+
+    <div class="card">
+      <div class="card__k">体育</div>
+      <h3>乒乓球 / 足球 / 篮球</h3>
+      <p>
+        曾经喜欢的几项运动。后来因为运动天赋实在太差，慢慢就没练下去了。
+        小学时看球，最喜欢的篮球运动员是库里，足球是内马尔——不过已经很久没看球了。
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card__k">电竞</div>
+      <h3>主要看 LOL 比赛，其他项目云玩家</h3>
+      <p>
+        从 2023 年开始一直看 BLG 的比赛，看到今年 S 赛夺冠。
+        别的项目基本是云观众，图个热闹。
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card__k">音乐</div>
+      <h3>2025 年之后开始听中文说唱</h3>
+      <p>
+        揽佬、连麻、SASI、MULASAKEE……之后就基本没听过别的了。
+        大概跟自己进入大学以来的心态也有点关系。
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= 游戏 ================= -->
+  <section class="block">
+    <h2>02 · 游戏</h2>
+
+    <div class="card">
+      <div class="card__k">主玩</div>
+      <h3>英雄联盟 · 辅助萨勒芬妮绝症哥</h3>
+      <dl class="kv">
+        <dt>服务器</dt><dd>国服 · 男爵领域</dd>
+        <dt>游戏名</dt><dd>Vollerei6 #74942</dd>
+      </dl>
+      <p style="margin-top:12px">
+        绝症哥的意思是：只会这一个。想查战绩的话，加个好友比截图快。
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card__k">Steam</div>
+      <h3>RNGSugarman</h3>
+      <p>
+        文明 6 打过神难度——这貌似是我唯一一款通关了最高难度的游戏吧？
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= B站 ================= -->
+  <section class="block">
+    <h2>03 · 哔哩哔哩</h2>
+    <div class="card">
+      <div class="bili">
+        <div class="bili__avatar">▶</div>
+        <div>
+          <h3 style="margin:0 0 4px">网友滕顺杨</h3>
+          <a href="https://space.bilibili.com/3493144029038938" target="_blank" rel="noopener">space.bilibili.com/3493144029038938</a>
+        </div>
+        <div class="bili__stats">
+          <div class="bili__stat"><b id="stat-follower">—</b><span>粉丝</span></div>
+          <div class="bili__stat"><b id="stat-following">—</b><span>关注</span></div>
+        </div>
+      </div>
+      <p style="margin-top:14px">
+        其实这样也约等于是实名上网了……不过既然你都看到这里了，那就帮我点个关注呗。
+      </p>
+      <p class="stale" id="stat-stale" hidden></p>
+    </div>
+  </section>
+
+  <!-- ================= 终端 ================= -->
+  <section class="block">
+    <h2>04 · 终端</h2>
+    <div class="shell" id="shell-root">
+      <div class="shell__bar">
+        <div class="shell__dots"><i></i><i></i><i></i></div>
+        <span>guest@inner-world — /bin/sh</span>
+      </div>
+      <div class="shell__screen">
+        <div class="shell__out"></div>
+        <div class="shell__line">
+          <span class="shell__prompt"></span>
+          <input type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
+                 aria-label="命令行输入" placeholder="输入 help，或者 ls">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 邓默</span>
+    <span>·</span>
+    <span>本页不进简历</span>
+    <span style="margin-left:auto">← <a href="../">返回主页</a></span>
+  </footer>
+</div>
+
+<div class="reality" id="reality" aria-hidden="true"></div>
+
+<style>
+  /* 转场沿用主样式变量，这里补一份（里世界不加载 style.css） */
+  .reality { position: fixed; inset: 0; z-index: 999; display: none; background: #05070a; color: #8ff0c0;
+             font-family: var(--mono); font-size: 13px; padding: 40px; align-content: start; }
+  .reality.on { display: grid; }
+  .reality__lines { white-space: pre-wrap; }
+  .reality__lines .l { opacity: 0; animation: flick .18s forwards; }
+  @keyframes flick { to { opacity: 1; } }
+  .reality::after { content: ""; position: fixed; inset: 0; pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,.35) 0 1px, transparent 1px 3px); opacity: .5; }
+</style>
+
+<script src="../assets/js/terminal.js"></script>
+<script>
+/* file:// 直接打开时不会做目录索引，所以要显式补 index.html */
+var IS_FILE = location.protocol === 'file:';
+function href(p) { return IS_FILE ? p + 'index.html' : p; }
+
+var BACK = {
+  href: href('../'),
+  boot: [
+    '$ umount /mnt/inner-world',
+    '  [ OK ] 正在回收未编目分区',
+    '  [ OK ] 恢复索引',
+    '',
+    '> 回到主页……'
+  ]
+};
+
+var TREE = {
+  '~': {
+    type: 'dir',
+    children: {
+      'notes.txt': {
+        type: 'file',
+        note: '随手记',
+        content:
+          '这个分区不需要索引。\n\n' +
+          '体育：乒乓球、足球、篮球。后来因为天赋问题，放弃了。\n' +
+          '电竞：只看 LOL，从 2023 年看 BLG 看到今年夺冠。\n' +
+          '音乐：2025 年之后基本只听中文说唱。\n' +
+          '游戏：英雄联盟（辅助萨勒芬妮）、文明 6（神难度通关）。'
+      },
+      'stats.json': {
+        type: 'file',
+        note: '实时数据（只读）',
+        content: '数据从 ../data/stats.json 读取，用 `stats` 命令查看。'
+      },
+      'secret': {
+        type: 'dir',
+        note: '',
+        children: {
+          'flag.txt': {
+            type: 'file',
+            content: 'flag{you_found_it}\n\n恭喜，你是那种会 ls 每个目录的人。'
+          }
+        }
+      }
+    }
+  }
+};
+
+Shell.mount({
+  root: document.getElementById('shell-root'),
+  tree: TREE,
+  whoami: 'guest@inner-world（简历之外的访客）',
+  prompt: function (cwd) { return 'guest@inner-world <b>' + cwd + '</b> $'; },
+  promptText: function (cwd) { return 'guest@inner-world ' + cwd + ' $'; },
+  banner: ['已挂载 /dev/inner-world（只读）', '提示：cd .. 或 exit 返回主页。'],
+  worlds: {
+    '..': BACK,
+    '~': { href: BACK.href, boot: BACK.boot }
+  },
+  commands: {
+    stats: function () {
+      return fetch('../data/stats.json', { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function (d) { return JSON.stringify(d, null, 2).split('\n'); })
+        .catch(function (e) { return { text: 'stats: 读取失败（' + e.message + '）', cls: 'err' }; });
+    },
+    bili: function () {
+      window.open('https://space.bilibili.com/3493144029038938', '_blank', 'noopener');
+      return { text: '→ 打开 B 站（网友滕顺杨）', cls: 'dim' };
+    }
+  },
+  onExit: function () { Reality.play(BACK.href, BACK.boot); return null; },
+  extraHelp: [
+    '  stats             查看抓取到的实时数据',
+    '  bili              打开 B 站主页',
+    '  cd ..             返回主页',
+    '  exit              返回主页'
+  ]
+});
+
+/* file:// 下 ../ 会变成目录列表，补成 index.html */
+if (IS_FILE) {
+  document.querySelectorAll('a[href="../"]').forEach(function (a) {
+    a.setAttribute('href', '../index.html');
+  });
+}
+
+/* ---------- 读取静态数据（由 Actions 定时更新） ---------- */
+(function () {
+  var f = document.getElementById('stat-follower');
+  var g = document.getElementById('stat-following');
+  var stale = document.getElementById('stat-stale');
+
+  function note(msg) { stale.hidden = false; stale.textContent = msg; }
+
+  fetch('../data/stats.json', { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (d) {
+      var b = d.bilibili || {};
+      if (b.follower != null) f.textContent = Number(b.follower).toLocaleString('en-US');
+      if (b.following != null) g.textContent = Number(b.following).toLocaleString('en-US');
+
+      if (!d.updated) { note('示例数据：配好 BILI_MID 并跑一次 Actions 即可覆盖。'); return; }
+      var days = Math.floor((Date.now() - new Date(d.updated).getTime()) / 864e5);
+      var when = new Date(d.updated).toLocaleString('zh-CN', { hour12: false });
+      note('数据抓取于 ' + when + (days > 3 ? '（已过期 ' + days + ' 天，检查 Actions）' : ''));
+    })
+    .catch(function () {
+      note(location.protocol === 'file:'
+        ? '本地 file:// 预览读不到 JSON：用 python -m http.server 打开就能看到数据。'
+        : '数据文件尚未生成（首次部署后由 Actions 写入）。');
+    });
+})();
+</script>
+</body>
+</html>

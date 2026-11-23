@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>简历 · 邓默</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▤</text></svg>">
+<style>
+  :root {
+    --ink: #16181a;
+    --muted: #5d6065;
+    --rule: #d8d8d4;
+    --accent: #1f5f4e;
+    --sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --serif: Georgia, "Source Han Serif SC", "Songti SC", "SimSun", serif;
+    --mono: "JetBrains Mono", Consolas, ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #eceae5; color: var(--ink);
+    font-family: var(--sans); font-size: 13.5px; line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 屏幕上的 A4 纸 */
+  .paper {
+    width: 210mm; min-height: 297mm; margin: 28px auto; padding: 16mm 15mm;
+    background: #fff; box-shadow: 0 12px 44px -18px rgba(0,0,0,.4);
+  }
+
+  .toolbar {
+    position: fixed; right: 22px; bottom: 22px; display: flex; gap: 8px; z-index: 10;
+  }
+  .toolbar a, .toolbar button {
+    font: inherit; font-size: 12.5px; text-decoration: none; cursor: pointer;
+    background: var(--ink); color: #fff; border: 0; padding: 9px 15px;
+    font-family: var(--mono); letter-spacing: .02em;
+  }
+  .toolbar a { background: #fff; color: var(--ink); box-shadow: 0 2px 10px rgba(0,0,0,.14); }
+  .toolbar button:hover { background: var(--accent); }
+
+  /* ---------- 头部 ---------- */
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 18px; }
+  .name-row { display: flex; align-items: baseline; gap: 12px; }
+  h1 { font-family: var(--serif); font-size: 27px; margin: 0; letter-spacing: .01em; }
+  .name-row .en { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .12em; }
+  .title { color: var(--muted); margin-top: 4px; font-size: 13px; }
+  .contact { margin-top: 8px; font-family: var(--mono); font-size: 11.5px; color: #3f4246; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  .contact a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+
+  /* ---------- 章节 ---------- */
+  section { margin-bottom: 15px; }
+  h2 {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 9px; display: flex; align-items: center; gap: 10px; font-weight: 600;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+  .item { margin-bottom: 11px; }
+  .item:last-child { margin-bottom: 0; }
+  .item__head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .item__head b { font-size: 13.5px; font-weight: 600; }
+  .item__head .org { color: var(--muted); font-weight: 400; }
+  .item__when { font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .item__sub { color: var(--muted); font-size: 12.5px; margin-top: 1px; }
+  ul { margin: 5px 0 0; padding-left: 17px; }
+  li { margin-bottom: 2px; }
+  li::marker { color: #b6b2a6; }
+
+  .pub { margin: 0; padding-left: 17px; }
+  .pub li { margin-bottom: 6px; }
+  .pub em { font-style: normal; text-decoration: underline; text-decoration-color: var(--rule); }
+
+  .note { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+  footer { border-top: 1px solid var(--rule); margin-top: 18px; padding-top: 8px; font-family: var(--mono); font-size: 10.5px; color: #9a968c; display: flex; justify-content: space-between; }
+
+  @media (max-width: 850px) {
+    .paper { width: auto; margin: 0; padding: 20px 18px 90px; min-height: 0; box-shadow: none; }
+  }
+
+  @page { size: A4; margin: 14mm 13mm; }
+
+  @media print {
+    body { background: #fff; font-size: 12.4px; }
+    .paper { width: auto; margin: 0; padding: 0; box-shadow: none; min-height: 0; }
+    .toolbar { display: none; }
+    a { color: inherit; }
+    section { break-inside: avoid; }
+    .item { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="paper">
+  <header>
+    <div class="name-row">
+      <h1>邓默</h1>
+      <span class="en">DENG MO</span>
+    </div>
+    <div class="title">上海交通大学 · 软件工程 · 2024 级本科生（大三在读）</div>
+    <div class="contact">
+      <span>tim-677@sjtu.edu.cn</span>
+      <span><a href="https://github.com/Vollerei6">github.com/Vollerei6</a></span>
+      <span><a href="https://gitee.com/Vollerei6">gitee.com/Vollerei6</a></span>
+      <span>上海 · 上海交通大学</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>教育背景</h2>
+    <div class="item">
+      <div class="item__head">
+        <b>上海交通大学 <span class="org">· 计算机学院（网络空间安全学院、密码学院）</span></b>
+        <span class="item__when">2024.09 – 2028.06（预计）</span>
+      </div>
+      <div class="item__sub">软件工程 · 工学学士</div>
+      <ul>
+        <li>学积分排名 <strong>18 / 91</strong>（截至第二学年）</li>
+        <li>2025 年度上海交通大学 A/B/C 等优秀奖学金 <strong>B 等</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>科研经历</h2>
+
+    <div class="item">
+      <div class="item__head">
+        <b>IPADS 实验室 <span class="org">· 本科生科研</span></b>
+        <span class="item__when">2026.08 – 至今</span>
+      </div>
+      <div class="item__sub">水下机器人 Vision-Language-Action（VLA）· 上海交通大学</div>
+      <ul>
+        <li>参与小型水下机器人的 VLA 系统开发，系统计划于 2026 开源鸿蒙技术大会上亮相。</li>
+        <li>设计并实现基于运动规划脚本的全自动数据采集 pipeline，将数据采集从人工遥控改为脚本驱动，
+            提升采集效率与样本一致性。</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item__head">
+        <b>IWIN-FINS 实验室 <span class="org">· 本科生科研</span></b>
+        <span class="item__when">2025.09 – 2026.07</span>
+      </div>
+      <div class="item__sub">树状机器人控制固件的静态时序编排 · 上海交通大学</div>
+      <ul>
+        <li>参与 FineMote 嵌入式框架的开发，框架以 C++ 实现，已在 Gitee 开源。</li>
+        <li>负责论文《Static Timing Orchestration for Tree-Structured Robot Control Firmware》的实验部分，
+            支撑编译期时序编排的时序约束分析。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>论文</h2>
+    <ol class="pub">
+      <li>
+        Wang Xi, Feiran Wei, <strong>Mo Deng</strong>, Weiheng Lin, Pangkit Fong, Jianping He.
+        <em>Static Timing Orchestration for Tree-Structured Robot Control Firmware</em>.
+        arXiv:2608.04600, 2026.（第三作者）
+      </li>
+    </ol>
+    <div class="note">
+      代码：<a href="https://gitee.com/fins-robotics/FineMote">gitee.com/fins-robotics/FineMote</a>
+      &nbsp;·&nbsp; 论文：<a href="https://arxiv.org/abs/2608.04600">arxiv.org/abs/2608.04600</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>竞赛与荣誉</h2>
+
+    <div class="item">
+      <div class="item__head">
+        <b>交龙校内赛 · 算法专项赛（SentryDuel）<span class="org"> · 二等奖、技术创新奖</span></b>
+        <span class="item__when">2026.09 – 2026.10</span>
+      </div>
+      <ul>
+        <li>使用强化学习实现非完美信息零和博弈环境下的对战 AI，负责策略模型训练与对战系统实现。</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item__head">
+        <b>中国机器人大赛暨 RoboCup 公开赛 <span class="org">· 无人机识别与快递运输实物赛 · 专项赛二等奖</span></b>
+        <span class="item__when">2025.06 – 2025.08</span>
+      </div>
+      <ul>
+        <li>负责无人机运动规划（基于 Fast-LIO 与 Ego-Planner）及手写状态机系统，支撑实物赛全流程任务执行。</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item__head">
+        <b>交龙校内赛 <span class="org">· 冠军</span></b>
+        <span class="item__when">2024.10 – 2024.12</span>
+      </div>
+      <ul>
+        <li>负责机器人部分电控代码开发。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>专业技能</h2>
+    <ul>
+      <li><strong>编程语言：</strong>C++（熟练）、Qt 框架；Git 版本管理。</li>
+      <li><strong>嵌入式与机器人：</strong>STM32 嵌入式开发、ROS；运动规划（Fast-LIO、Ego-Planner）、手写状态机。</li>
+      <li><strong>理论了解：</strong>控制理论、机器人学、深度学习、Vision-Language-Action。</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>邓默 · 简历</span>
+    <span>更新于 2026-11-24</span>
+  </footer>
+</div>
+
+<div class="toolbar">
+  <button type="button" onclick="window.print()">打印 / 存为 PDF</button>
+  <a href="../" id="back">返回主页</a>
+</div>
+
+<script>
+  // file:// 下 ../ 会变成目录列表
+  if (location.protocol === 'file:') {
+    document.getElementById('back').setAttribute('href', '../index.html');
+  }
+</script>
+
+</body>
+</html>

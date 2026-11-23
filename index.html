@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>邓默 · 个人主页</title>
+<meta name="description" content="邓默，上海交通大学软件工程 24 级本科生。研究经历：IPADS 实验室水下机器人 VLA、IWIN-FINS 实验室嵌入式框架。">
+<meta name="theme-color" content="#f7f5f0">
+<meta property="og:title" content="邓默 · 个人主页">
+<meta property="og:description" content="上海交通大学软件工程 24 级本科生。机器人、嵌入式，以及一些没那么软件工程的东西。">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="./">邓默 · Deng Mo</a>
+    <div class="nav__links">
+      <a href="#education">教育</a>
+      <a href="#research">研究</a>
+      <a href="#publications">论文</a>
+      <a href="#awards">荣誉</a>
+      <a href="cv/">简历</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ================= HERO ================= -->
+  <header class="hero" id="about">
+    <div class="hero__eyebrow">Personal Page · 2026</div>
+    <h1>邓默<small>Deng Mo</small></h1>
+    <p class="hero__affil">
+      上海交通大学 · 软件工程 · 24 级本科生（大三）。
+      专业是软件工程，研究兴趣好像没那么软件工程——目前在 IPADS 实验室做水下机器人的 VLA，
+      之前在 IWIN-FINS 实验室写机器人控制固件。
+    </p>
+    <div class="hero__links">
+      <a class="chip" href="mailto:tim-677@sjtu.edu.cn"><span>✉</span> tim-677@sjtu.edu.cn</a>
+      <a class="chip" href="https://github.com/Vollerei6" target="_blank" rel="noopener"><span>⌥</span> GitHub</a>
+      <a class="chip" href="https://gitee.com/Vollerei6" target="_blank" rel="noopener"><span>◈</span> Gitee</a>
+      <a class="chip" href="cv/"><span>▤</span> 简历</a>
+    </div>
+  </header>
+
+  <!-- ================= 教育 ================= -->
+  <section class="section reveal" id="education">
+    <div class="section__head">
+      <span class="section__num">01</span>
+      <h2>教育与经历</h2>
+      <span class="section__note">education</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when">2024.09 – 至今</div>
+      <div>
+        <div class="entry__what">本科 · 软件工程 <span class="org">上海交通大学 · 计算机学院</span></div>
+        <div class="entry__desc">
+          学积分排名 18 / 91（截至第二学年）。2025 年进入 IWIN-FINS 实验室参与科研，2026 年起在 IPADS 实验室。
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when">2021.09 – 2024.06</div>
+      <div>
+        <div class="entry__what">高中 <span class="org">临川一中</span></div>
+        <div class="entry__desc">和很多“做题家”一样，在刷题里过完了三年。没打过信息学竞赛。</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when">2018.09 – 2021.06</div>
+      <div>
+        <div class="entry__what">初中 <span class="org">南丰一中</span></div>
+        <div class="entry__desc">初一参加了一个青少年机器人比赛——现在回头看，那大概是接触机器人的开端。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 研究 ================= -->
+  <section class="section reveal" id="research">
+    <div class="section__head">
+      <span class="section__num">02</span>
+      <h2>研究经历</h2>
+      <span class="section__note">research</span>
+    </div>
+
+    <div class="card">
+      <div class="card__meta">2026.08 – 至今 · IPADS Lab</div>
+      <h3>水下机器人 Vision-Language-Action</h3>
+      <p>
+        在做一个小型水下机器人的 VLA 系统，计划在 2026 开源鸿蒙技术大会上亮相。
+        另外搭了一套基于运动规划脚本的全自动数据采集 pipeline，让采数据这件事不用再靠人遥控。
+      </p>
+      <div class="card__tags">
+        <span class="tag">VLA</span><span class="tag">运动规划</span><span class="tag">数据采集</span>
+      </div>
+      <p style="margin-top:12px;font-size:13.5px">
+        <a href="https://ipads.sjtu.edu.cn/" target="_blank" rel="noopener">ipads.sjtu.edu.cn</a>
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card__meta">2025.09 – 2026.07 · IWIN-FINS Lab</div>
+      <h3>FineMote · 树状机器人控制固件的静态时序编排</h3>
+      <p>
+        参与 FineMote 嵌入式框架的开发，负责论文
+        <em>Static Timing Orchestration for Tree-Structured Robot Control Firmware</em> 的实验部分。
+        框架在 Gitee 上开源。
+      </p>
+      <div class="card__tags">
+        <span class="tag">嵌入式</span><span class="tag">C++</span><span class="tag">ROS</span><span class="tag">时序分析</span>
+      </div>
+      <p style="margin-top:12px;font-size:13.5px">
+        <a href="https://gitee.com/fins-robotics/FineMote" target="_blank" rel="noopener">FineMote 仓库</a>
+        &nbsp;·&nbsp;
+        <a href="https://arxiv.org/abs/2608.04600" target="_blank" rel="noopener">arXiv:2608.04600</a>
+        &nbsp;·&nbsp;
+        <a href="https://iwin-fins.com/" target="_blank" rel="noopener">实验室主页</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= 论文 ================= -->
+  <section class="section reveal" id="publications">
+    <div class="section__head">
+      <span class="section__num">03</span>
+      <h2>论文发表</h2>
+      <span class="section__note">publications</span>
+    </div>
+
+    <div class="card">
+      <div class="card__meta">2026 · 预印本 · 机器人系统</div>
+      <h3>Static Timing Orchestration for Tree-Structured Robot Control Firmware</h3>
+      <p>
+        Wang Xi, Feiran Wei, <strong>Mo Deng</strong>, Weiheng Lin, Pangkit Fong, Jianping He.
+        &nbsp;arXiv:2608.04600.
+      </p>
+      <p style="margin-top:8px;font-size:14px;color:#5a5a54">
+        利用编译期信息为树状设备模型确定执行顺序，分析时序约束与决策延迟。本人负责实验部分。
+      </p>
+      <div class="card__tags">
+        <a class="tag" href="https://arxiv.org/abs/2608.04600" target="_blank" rel="noopener">论文</a>
+        <a class="tag" href="https://arxiv.org/pdf/2608.04600" target="_blank" rel="noopener">PDF</a>
+        <a class="tag" href="https://gitee.com/fins-robotics/FineMote" target="_blank" rel="noopener">代码</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 荣誉 ================= -->
+  <section class="section reveal" id="awards">
+    <div class="section__head">
+      <span class="section__num">04</span>
+      <h2>荣誉与获奖</h2>
+      <span class="section__note">awards</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when">2026.09 – 2026.10</div>
+      <div>
+        <div class="entry__what">交龙校内赛 · 算法专项赛（SentryDuel）<span class="org">· 二等奖 &amp; 技术创新奖</span></div>
+        <div class="entry__desc">
+          用强化学习做了一个对战 AI，用于一个非完美信息零和博弈的游戏。最后差一名进一等奖。
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when">2025.06 – 2025.08</div>
+      <div>
+        <div class="entry__what">中国机器人大赛暨 RoboCup 公开赛 · 无人机识别与快递运输实物赛<span class="org">· 专项赛二等奖</span></div>
+        <div class="entry__desc">
+          负责无人机的运动规划（Fast-LIO + Ego-Planner）和手写状态机系统。
+          因个人原因没参加国赛，队友在国赛拿了一等奖。
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when">2024.10 – 2024.12</div>
+      <div>
+        <div class="entry__what">交龙校内赛 <span class="org">冠军</span></div>
+        <div class="entry__desc">负责了一部分电控代码。</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when">2025</div>
+      <div>
+        <div class="entry__what">上海交通大学 A/B/C 等优秀奖学金 <span class="org">B 等</span></div>
+        <div class="entry__desc">2025 年度。2026 年度尚未评选。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 技能 ================= -->
+  <section class="section reveal" id="skills">
+    <div class="section__head">
+      <span class="section__num">05</span>
+      <h2>技能</h2>
+      <span class="section__note">skills</span>
+    </div>
+    <div class="grid2">
+      <div>
+        <h4>编程与框架</h4>
+        <ul>
+          <li>C++（熟练）</li>
+          <li>Qt 框架</li>
+        </ul>
+      </div>
+      <div>
+        <h4>嵌入式与机器人</h4>
+        <ul>
+          <li>STM32 嵌入式开发</li>
+          <li>ROS、运动规划（Fast-LIO / Ego-Planner）</li>
+        </ul>
+      </div>
+      <div>
+        <h4>正在了解</h4>
+        <ul>
+          <li>控制理论、机器人学</li>
+          <li>深度学习、VLA</li>
+        </ul>
+      </div>
+      <div>
+        <h4>坦白</h4>
+        <ul>
+          <li>其他很多能力都依靠 Vibe Coding，暂不列入。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 终端 ================= -->
+  <section class="shell-section reveal" id="shell">
+    <div class="section__head">
+      <span class="section__num">06</span>
+      <h2>终端</h2>
+      <span class="section__note">/bin/sh</span>
+    </div>
+    <p class="shell-hint">
+      <span><kbd>help</kbd> 看看有什么</span>
+      <span>·</span>
+      <span><kbd>Tab</kbd> 补全 <kbd>↑</kbd> 历史</span>
+    </p>
+
+    <div class="shell" id="shell-root">
+      <div class="shell__bar">
+        <div class="shell__dots"><i></i><i></i><i></i></div>
+        <span class="shell__title">guest@dengmo — /bin/sh — 80×24</span>
+      </div>
+      <div class="shell__screen">
+        <div class="shell__out"></div>
+        <div class="shell__line">
+          <span class="shell__prompt"></span>
+          <input type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
+                 aria-label="命令行输入" placeholder="输入 help 开始">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 邓默</span>
+    <span>·</span>
+    <span>最后更新 2026-11-24</span>
+    <span style="margin-left:auto">built with 0 dependencies</span>
+  </footer>
+</main>
+
+<div class="reality" id="reality" aria-hidden="true"></div>
+
+<script src="assets/js/terminal.js"></script>
+<script>
+/* file:// 直接打开时不会做目录索引，所以要显式补 index.html */
+var IS_FILE = location.protocol === 'file:';
+function href(p) { return IS_FILE ? p + 'index.html' : p; }
+
+/* ---------- 虚拟文件系统：内容全部是静态字符串 ---------- */
+var TREE = {
+  '~': {
+    type: 'dir',
+    children: {
+      'README.md': {
+        type: 'file',
+        note: '关于这个页面',
+        content:
+          '# 关于这个页面\n\n' +
+          '一个纯静态的个人主页：一个仓库 + GitHub Pages，\n' +
+          '没有服务器、没有数据库、没有构建步骤。\n\n' +
+          '下面那个终端是真的在跑一个迷你解释器，\n' +
+          '它有一个自己的、只读的文件系统——就是你现在看到的这些。\n\n' +
+          '有些目录不在这里，它们在别的地方。'
+      },
+      'research.log': {
+        type: 'file',
+        note: '科研流水账',
+        content:
+          '[2025.09] 进 IWIN-FINS，先学 ROS，再慢慢看懂那个树状设备模型\n' +
+          '[2025.11] 跑实验，改脚本，重跑实验\n' +
+          '[2026.07] 论文定稿，第三作者\n' +
+          '[2026.08] 换到 IPADS，开始碰水下机器人\n' +
+          '[2026.11] 给数据采集 pipeline 收尾（大概）'
+      },
+      'contact.txt': {
+        type: 'file',
+        note: '联系方式',
+        content:
+          'email : tim-677@sjtu.edu.cn\n' +
+          'github: https://github.com/Vollerei6\n' +
+          'gitee : https://gitee.com/Vollerei6'
+      },
+      'awards': {
+        type: 'dir',
+        note: '',
+        children: {
+          'list.md': {
+            type: 'file',
+            content:
+              '2026.10  交龙校内赛算法专项赛（SentryDuel）二等奖 & 技术创新奖\n' +
+              '2025.08  中国机器人大赛暨 RoboCup 公开赛 无人机专项赛二等奖\n' +
+              '2024.12  交龙校内赛 冠军\n' +
+              '2025     上海交通大学 A/B/C 等优秀奖学金 B 等'
+          }
+        }
+      }
+    }
+  }
+};
+
+Shell.mount({
+  root: document.getElementById('shell-root'),
+  tree: TREE,
+  user: 'guest',
+  host: 'dengmo',
+  whoami: 'guest（一个通过浏览器连接到这里的访客）',
+  prompt: function (cwd) { return 'guest@dengmo <b>' + cwd + '</b> $'; },
+  promptText: function (cwd) { return 'guest@dengmo ' + cwd + ' $'; },
+  banner: [
+    'Last login: ' + new Date().toLocaleString('zh-CN', { hour12: false }) + ' on tty1',
+    '欢迎。这里通常不是给人看的。'
+  ],
+  worlds: {
+    'inner-world': {
+      href: href('inner-world/'),
+      boot: [
+        '$ mount /dev/inner-world /mnt',
+        '  [ OK ] 找到未编目的分区',
+        '  [ OK ] 跳过索引，直接挂载',
+        '  [WARN] 该区域不在简历的管辖范围内',
+        '',
+        '> 正在跳转……'
+      ]
+    }
+  },
+  commands: {
+    sudo: function () {
+      return { text: 'guest 不在 sudoers 文件中。此事已被记录。', cls: 'warn' };
+    },
+    rm: function (args) {
+      if (args.join(' ').indexOf('/') !== -1) return { text: 'rm: 权限不足。而且你确定？', cls: 'err' };
+      return { text: 'rm: 这里的东西删不掉，它们是写死的。', cls: 'dim' };
+    },
+    contact: function () {
+      return [
+        'email    tim-677@sjtu.edu.cn',
+        'github   https://github.com/Vollerei6',
+        'gitee    https://gitee.com/Vollerei6'
+      ];
+    }
+  },
+  extraHelp: [
+    '  contact           查看联系方式',
+    '  sudo <任何东西>   试试看'
+  ]
+});
+
+/* file:// 下 ./ 和 ../ 会变成目录列表，补成 index.html */
+if (IS_FILE) {
+  document.querySelectorAll('a[href="./"], a[href="../"]').forEach(function (a) {
+    a.setAttribute('href', a.getAttribute('href') + 'index.html');
+  });
+}
+
+/* 滚动揭示 */
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (e) { e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+name: refresh-stats
+
+# 定时抓取"里世界"要显示的实时数据，提交 data/stats.json。
+# 这样前端只读静态 JSON：没有 CORS 问题，也不会泄露任何 key。
+
+on:
+  schedule:
+    - cron: "17 2 * * *" # 每天 02:17 UTC（北京时间 10:17）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-stats
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch
+        env:
+          BILI_MID: ${{ secrets.BILI_MID }}
+          STEAM_KEY: ${{ secrets.STEAM_KEY }}
+          STEAM_ID: ${{ secrets.STEAM_ID }}
+        run: node scripts/fetch-stats.mjs
+
+      - name: Commit if changed
+        run: |
+          if [[ -z "$(git status --porcelain data/stats.json)" ]]; then
+            echo "没有变化，结束。"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stats.json
+          git commit -m "chore: refresh stats"
+          git push
