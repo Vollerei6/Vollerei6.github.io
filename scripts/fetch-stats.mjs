@@ -116,17 +116,28 @@ async function main() {
     process.exit(1);
   }
 
+  // 数值没变就不动 updated，否则每天都会产生一个只有时间戳的 commit
+  let oldRaw = null;
+  try { oldRaw = await readFile(OUT, 'utf8'); } catch {}
+  if (oldRaw) {
+    try {
+      const old = JSON.parse(oldRaw);
+      const sameBili = old.bilibili && stats.bilibili &&
+        ['mid', 'follower', 'following', 'video', 'opus']
+          .every((k) => old.bilibili[k] === stats.bilibili[k]);
+      const sameSteam = JSON.stringify(old.steam) === JSON.stringify(stats.steam);
+      if (sameBili && sameSteam && old.updated) stats.updated = old.updated;
+    } catch {}
+  }
+
   const json = JSON.stringify(stats, null, 2) + '\n';
 
   if (args['dry-run']) {
     process.stdout.write(json);
     return;
   }
+  if (oldRaw === json) { console.log('数据未变化，跳过写入。'); return; }
   await mkdir(dirname(OUT), { recursive: true });
-  try {
-    const old = await readFile(OUT, 'utf8');
-    if (old === json) { console.log('数据未变化，跳过写入。'); return; }
-  } catch {}
   await writeFile(OUT, json, 'utf8');
   console.log('已写入 data/stats.json');
 }

@@ -45,15 +45,18 @@ python -m http.server 8765
 ## 实时数据
 
 里世界的粉丝数/关注数来自 `data/stats.json`。B 站接口不返回 CORS 头，浏览器无法直连，
-所以由 Actions 每天抓一次并提交 JSON。
+所以由 Actions 每天抓一次并提交 JSON。**零配置**：mid 用 workflow 里的兜底值。
 
-1. **Settings → Secrets and variables → Actions** 里加 `BILI_MID = 3493144029038938`。
+![refresh-stats](https://github.com/Vollerei6/Vollerei6.github.io/actions/workflows/refresh-stats.yml/badge.svg)
+
+1. 想换成别的账号：**Settings → Secrets and variables → Actions** 加 `BILI_MID` 覆盖兜底值。
    可选：`STEAM_KEY` + `STEAM_ID`（Steam Web API key，只存在 Secrets 里）。
-2. **Actions → refresh-stats → Run workflow** 手动跑一次。
-3. 本地想验证抓取：`node scripts/fetch-stats.mjs --mid=3493144029038938 --dry-run`。
+2. **Actions → refresh-stats → Run workflow** 可以手动跑一次。
+3. 只有数值真的变了才会产生 commit（否则每天一个空 commit 太吵）。
+4. 本地想验证抓取：`node scripts/fetch-stats.mjs --mid=3493144029038938 --dry-run`。
    - 校园网 DNS 对 `api.bilibili.com` 会返回 NXDOMAIN（本机实测），本地跑不通属正常，用 Actions。
 
-> 当前 `data/stats.json` 里的数字是 2026-11-24 手工抓的真实值，已可直接显示。
+> 当前 `data/stats.json` 里是 2026-11-24 抓的真实值，已可直接显示。
 
 ## 简历页
 

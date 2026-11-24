@@ -250,7 +250,7 @@ if (IS_FILE) {
       if (!d.updated) { note('示例数据：配好 BILI_MID 并跑一次 Actions 即可覆盖。'); return; }
       var days = Math.floor((Date.now() - new Date(d.updated).getTime()) / 864e5);
       var when = new Date(d.updated).toLocaleString('zh-CN', { hour12: false });
-      note('数据抓取于 ' + when + (days > 3 ? '（已过期 ' + days + ' 天，检查 Actions）' : ''));
+      note('数据更新于 ' + when + (days > 30 ? '（已经 ' + days + ' 天没变过，看一眼 Actions 还在不在跑）' : ''));
     })
     .catch(function () {
       note(location.protocol === 'file:'

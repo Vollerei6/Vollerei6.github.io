@@ -27,7 +27,8 @@ jobs:
 
       - name: Fetch
         env:
-          BILI_MID: ${{ secrets.BILI_MID }}
+          # mid 是公开信息（页面上就写着），所以留一个兜底值：不加 Secret 也能跑
+          BILI_MID: ${{ secrets.BILI_MID || '3493144029038938' }}
           STEAM_KEY: ${{ secrets.STEAM_KEY }}
           STEAM_ID: ${{ secrets.STEAM_ID }}
         run: node scripts/fetch-stats.mjs
