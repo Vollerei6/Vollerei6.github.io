@@ -10,6 +10,7 @@
 <meta property="og:description" content="上海交通大学软件工程 24 级本科生。机器人、嵌入式，以及一些没那么软件工程的东西。">
 <meta property="og:type" content="profile">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -396,6 +397,11 @@ if (IS_FILE) {
     });
   }, { rootMargin: '0px 0px -8% 0px' });
   els.forEach(function (e) { io.observe(e); });
+
+  // 保险：万一 IO 没触发（老浏览器、极端布局），2 秒后全部显示，绝不留下白屏
+  setTimeout(function () {
+    els.forEach(function (e) { e.classList.add('in'); });
+  }, 2000);
 })();
 </script>
 </body>
